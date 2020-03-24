@@ -45,7 +45,7 @@ var rotate = function(nums, k) {
 /* SOLUTION 2 EXTRA ARRAY */
 var rotate = function(nums, k) {
   if (nums.length < 2 || k % nums.length == 0 || k==0) {return nums}
-  let steps = k % nums.length
+  k = k % nums.length
   let arr = []
   
   for (let i=0; i<nums.length; i++){    
@@ -65,7 +65,7 @@ var rotate = function(nums, k) {
 // take the nums.length-k element(the last n-k ele) out of the original arr
 // unshift them in the beginning
 var rotate = function(nums, k) {
-  let steps = k % nums.length
+  k = k % nums.length
   let remaining = nums.splice(nums.length-k)
   nums.unshift(...remaining)
 }
@@ -76,10 +76,10 @@ var rotate = function(nums, k) {
 // After reversing first k numbers : 5 6 7 4 3 2 1
 // After revering last n-k numbers : 5 6 7 1 2 3 4 --> Result
 var rotate = function(nums, k) {
-  let steps = k % nums.length
+  k = k % nums.length
   reverse(nums, 0, nums.length-1)
-  reverse(nums, 0, steps-1)
-  reverse(nums, steps, nums.length-1)
+  reverse(nums, 0, k-1)
+  reverse(nums, k, nums.length-1)
 };
 //     helper methode  reverse
 const reverse = function(nums, left, right) {
