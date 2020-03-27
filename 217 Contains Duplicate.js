@@ -6,8 +6,9 @@
 
 // Input: [1,2,3,1]
 // Output: true
-// Example 2:
 
+
+// Example 2:
 // Input: [1,2,3,4]
 // Output: false
 // Example 3:
@@ -24,6 +25,9 @@ var containsDuplicate = function(nums) {
     let set = new Set(nums)
     return nums.length === set.size ? false : true
 };
+
+// Time complexity: O(n)
+// Space complexity: 
 
 nums1=[1,1,1,3,3,4,3,2,4,2]
 containsDuplicate(nums1)
