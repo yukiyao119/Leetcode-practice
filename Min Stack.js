@@ -17,6 +17,40 @@
 // minStack.getMin();   --> Returns -2.
 
 
+/* SOLUTION 2 TIME O(1), FIND MIN ON EVERY ARRAY ELEMENT */
+var MinStack = function() {
+  this.elements = [];
+};
+
+MinStack.prototype.push = function(x) {
+  this.elements.push({
+    value: x,
+    min: this.elements.length === 0 ? x : Math.min(x, this.getMin()),
+  });
+};
+
+MinStack.prototype.pop = function() {
+  this.elements.pop();
+};
+
+MinStack.prototype.top = function() {
+  return this.elements[this.elements.length - 1].value;
+};
+
+MinStack.prototype.getMin = function() {
+  return this.elements[this.elements.length - 1].min;
+};
+
+
+let minStack = new MinStack();
+minStack.push(2);
+minStack.push(3);
+minStack.push(0);
+minStack.getMin();
+minStack.pop();
+minStack.getMin();
+
+
 /* SOLUTION 1 USE STACK */
 // var MinStack = function() {
 //   this.count = 0
@@ -51,42 +85,3 @@
 //   }
 //   return min
 // };
-
-
-/* SOLUTION 2 TIME O(1), FIND MIN ON EVERY ARRAY ELEMENT */
-var MinStack = function() {
-  this.elements = [];
-};
-
-MinStack.prototype.push = function(x) {
-  this.elements.push({
-    value: x,
-    min: this.elements.length === 0 ? x : Math.min(x, this.getMin()),
-  });
-};
-
-MinStack.prototype.pop = function() {
-  this.elements.pop();
-};
-
-MinStack.prototype.top = function() {
-  return this.elements[this.elements.length - 1].value;
-};
-
-MinStack.prototype.getMin = function() {
-  return this.elements[this.elements.length - 1].min;
-};
-
-
-let minStack = new MinStack();
-minStack.push(2);
-minStack.push(0);
-minStack.push(3);
-minStack.push(0);
-minStack.getMin();
-minStack.pop();
-minStack.getMin();
-minStack.pop();
-minStack.getMin();
-minStack.pop();
-minStack.getMin();
