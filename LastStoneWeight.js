@@ -43,14 +43,14 @@ var lastStoneWeight = function(stones) {
 // Space: O(1)
 
 /* SOLUTION 2 RECURSIVE SOLUTION */
-var lastStoneWeight = function(stones) {
-  const len = stones.length
-  if(len === 1) return stones
-  stones.sort((a,b)=>a-b)
-  const last = stones[len -1]
-  const secToLast = stones[len-2]
-  return lastStoneWeight(stones.slice(0, stones.length-2).concat(last-secToLast))
-}
+// var lastStoneWeight = function(stones) {
+//   const len = stones.length
+//   if(len === 1) return stones
+//   stones.sort((a,b)=>a-b)
+//   const last = stones[len -1]
+//   const secToLast = stones[len-2]
+//   return lastStoneWeight(stones.slice(0, stones.length-2).concat(last-secToLast))
+// }
 
 /* SOLUTION 3 HEAP & PRORITY QUEUE */
 // var lastStoneWeight = function(stones) {
