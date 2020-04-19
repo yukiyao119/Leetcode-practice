@@ -57,3 +57,5 @@ var minPathSum = function(grid) {
   // operation:
   //   grid[i][j] += min(helper(i+1, j), helper(i,j+1))
   // return helper(0, 0)
+  
+  // one way to avoid time exceeds is to use Memoization
