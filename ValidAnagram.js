@@ -16,14 +16,14 @@
 /* SOLUTION 1 OBJECT OR HASHMAP */
 // Creat Map for s. Iterate over t and decrease the occurance. If its below 0 then false. 
 var isAnagram = function(s, t) {
-  if (s.length !== t.length){ return false}
+  if ( s.length !== t.length ){ return false }
   let mapS = {}
   
   for(let char of s){
       mapS[char] = mapS[char]+1 || 1
   }
   for(let char of t){
-      if (!mapS[char] || mapS[char]<0) {return false}
+      if (!mapS[char] || mapS[char]<0) { return false }
       mapS[char]--
   }    
   return true

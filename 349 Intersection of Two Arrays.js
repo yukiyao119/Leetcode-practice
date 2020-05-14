@@ -17,7 +17,8 @@ var intersect = function(nums1, nums2) {
   let hash = {}
   let result = []
 
-  for (let i in nums1){
+  for (let i of nums1){
+    debugger
     hash[i] = hash[i]+1 || 1
   }
   console.log(hash)
@@ -31,3 +32,5 @@ var intersect = function(nums1, nums2) {
   return result
 
 };
+
+intersect([1,2,2,3], [1,2])

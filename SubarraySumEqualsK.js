@@ -33,15 +33,12 @@ var subarraySum = function(nums, k) {
     if ( map.has(sum-k) ) {
       count += map.get(sum-k)
     }
-
     if ( map.has(sum) ) {
       map.set( sum, map.get(sum) + 1)
     } else { 
       map.set(sum, 1)
     }
-
   }
-
   return count
 }
 
