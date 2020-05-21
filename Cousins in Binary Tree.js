@@ -15,6 +15,7 @@
   //         not equal node should be added to queue
   //     if both booleans are true, they are cousins
   // Out of while loop, return false
+
 var isCousins = function(root, x, y) {
   const queue = [root];
   while (queue.length > 0) {
